@@ -4,7 +4,7 @@
 > 🔍 逆向拆解岗位JD，像素级优化简历——让应届生看清"这个岗位到底要什么人"。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Prompts: 4](https://img.shields.io/badge/Prompts-4-blue.svg)](prompts/)
+[![Prompts: 5](https://img.shields.io/badge/Prompts-5-blue.svg)](prompts/)
 [![Lang: ZH+EN](https://img.shields.io/badge/Lang-ZH%20%7C%20EN-orange.svg)](#)
 
 ---
@@ -108,7 +108,7 @@ See [`examples/`](examples/) for complete walkthroughs with simulated data:
 | [Product Manager (New Grad)](examples/product-manager.md) | CS major → PM role at a mid-size internet company |
 | [Digital Marketing](examples/digital-marketing.md) | Marketing major with agency internship → Brand-side marketing role |
 
-Each example shows the full 4-step output so you know exactly what to expect.
+Each example shows the full 5-step output so you know exactly what to expect.
 
 ---
 
