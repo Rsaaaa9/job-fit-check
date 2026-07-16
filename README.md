@@ -19,7 +19,7 @@ A **prompt-based workflow** that transforms how fresh graduates match their resu
 
 ---
 
-## The 4-Step Workflow / 四步工作流
+## The 5-Step Workflow / 五步工作流
 
 ```
 📥 INPUT: Your Resume + The Job Description (JD)
@@ -43,10 +43,17 @@ A **prompt-based workflow** that transforms how fresh graduates match their resu
 │ ④ Final Output / 终稿输出                   │
 │    └─ prompts/final-output.md              │
 │    Optimized full resume + Cover Letter    │
-│    highlights + Application strategy       │
+│    highlights + Multi-JD comparison        │
+├─────────────────────────────────────────── -┤
+│ ⑤ Interview Prep / 面试全流程准备  🆕        │
+│    └─ prompts/interview-prep.md            │
+│    HR phone screen scripts,                │
+│    industry crash course,                  │
+│    weakness mitigation,                    │
+│    technical interview readiness           │
 └─────────────────────┬──────────────────────┘
                       │
-📤 OUTPUT: Complete diagnostic report + Optimized resume
+📤 OUTPUT: Complete diagnostic report + Optimized resume + Interview scripts
 ```
 
 ---
@@ -87,7 +94,8 @@ Copy [`job-fit-check-agent.md`](job-fit-check-agent.md) to `~/.claude/agents/job
 | ① | 硬性门槛 / 隐形需求 / 核心能力 / 加分项 / 面试追问方向 |
 | ② | 匹配点 / 冗余内容(应删除) / 缺失项 / 风险点 |
 | ③ | 每段经历 STAR 重写 / 自我评价定向修改 / 技能板块重组 / 排版建议 |
-| ④ | 优化后简历全文 + Cover Letter 要点 + 投递渠道策略 |
+| ④ | 优化后简历全文 + Cover Letter 要点 + 多JD横向对比 + 投递策略 |
+| ⑤ | 🆕 HR电话逐题话术 / 行业速成知识点 / 弱点预案 / 技术面试准备 |
 
 ---
 
