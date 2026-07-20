@@ -1,4 +1,4 @@
-# Job Fit Check — AI招聘经理视角全流程求职助手
+# Pleadly — 聪明地求职 / Plead Smart
 
 > AI招聘经理视角的全流程求职助手——从JD投递到入职，每一步都有你。
 > AI-powered full-cycle career assistant — from job matching to day-1 survival guide.
@@ -22,8 +22,8 @@ A **full-cycle job application system** covering every stage of the job hunt —
 ### Easiest: Claude Code (1 command)
 
 ```bash
-git clone https://github.com/Rsaaaa9/job-fit-check.git
-cd job-fit-check
+git clone https://github.com/Rsaaaa9/Pleadly.git
+cd Pleadly
 claude  # CLAUDE.md auto-loads the full 10-step workflow
 ```
 
@@ -35,7 +35,7 @@ Open [`prompts/`](prompts/), copy any prompt, paste into ChatGPT / Claude / Kimi
 
 ### Slash command (for Claude Code users)
 
-Copy `job-fit-check-agent.md` to `~/.claude/agents/job-fit-check.md`, then type `/job-fit-check`.
+Copy `job-fit-check-agent.md` to `~/.claude/agents/pleadly.md`, then type `/pleadly`.
 
 ---
 

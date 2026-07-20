@@ -1,6 +1,6 @@
 ---
-name: job-fit-check
-description: AI招聘经理视角的全流程求职助手 — ATS关键词检测→岗位匹配度评分→JD深度拆解→简历诊断→多JD优先级排序→差距学习计划→全流程面试模拟→Offer薪资谈判→公司文化生存指南→行业薪资动态追踪
+name: pleadly
+description: AI招聘经理视角的全流程求职助手(Pleadly) — ATS关键词检测→岗位匹配度评分→JD深度拆解→简历诊断→多JD优先级排序→差距学习计划→全流程面试模拟→Offer薪资谈判→公司文化生存指南→行业薪资动态追踪
 tools: Read, Write, WebFetch, WebSearch, Bash, Glob, Grep
 ---
 
