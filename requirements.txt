@@ -1,0 +1,31 @@
+# Pleadly 依赖清单
+# 安装方式: pip install -r requirements.txt
+
+# ── Web 框架 ──
+fastapi==0.115.0
+uvicorn[standard]==0.34.0
+gradio==5.0.0
+
+# ── LLM & AI ──
+openai==1.75.0          # DeepSeek API 兼容 OpenAI SDK
+langchain==0.3.0
+langchain-community==0.3.0
+
+# ── RAG 向量数据库 ──
+chromadb==0.5.20
+sentence-transformers==3.3.0   # text2vec-base-chinese Embedding
+
+# ── 文档解析 ──
+python-docx==1.1.2
+pypdf2==3.0.1
+markdown==3.7
+
+# ── 联网检索 ──
+requests==2.32.0
+beautifulsoup4==4.12.0
+duckduckgo-search==7.5.0
+
+# ── 工具 ──
+python-dotenv==1.0.0
+pydantic==2.10.0
+httpx==0.28.0
