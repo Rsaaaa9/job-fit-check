@@ -1,171 +1,90 @@
-# Job Fit Check — 岗位匹配检测 / Job Fit Checker
+# Job Fit Check — AI招聘经理视角全流程求职助手
 
-> 🔍 Reverse-engineer job descriptions. Rewrite resumes with surgical precision.  
-> 🔍 逆向拆解岗位JD，像素级优化简历——让应届生看清"这个岗位到底要什么人"。
+> AI招聘经理视角的全流程求职助手——从JD投递到入职，每一步都有你。
+> AI-powered full-cycle career assistant — from job matching to day-1 survival guide.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Prompts: 5](https://img.shields.io/badge/Prompts-5-blue.svg)](prompts/)
+[![Workflow: 10 Steps](https://img.shields.io/badge/Workflow-10_Steps-purple.svg)](#)
 [![Lang: ZH+EN](https://img.shields.io/badge/Lang-ZH%20%7C%20EN-orange.svg)](#)
 
 ---
 
-## What is this? / 这是什么？
+## What is this?
 
-A **prompt-based workflow** that transforms how fresh graduates match their resumes to job descriptions. It's a 4-step methodology originally built for a Xiaohongshu (RED) content creator, now open-sourced so anyone can use it.
+A **full-cycle job application system** covering every stage of the job hunt — from initial JD matching to salary negotiation and onboarding. Born from real interviews with semiconductor, pharma, logistics, and AI SaaS companies in 2026.
 
-一套**基于 Prompt 的工作流**，帮助应届生精准匹配简历与岗位。原本是为一个小红书账号设计的方法论，现在开源——任何人都能用。
-
-**Every step is a prompt you can drop into ChatGPT, Claude, DeepSeek, Kimi, or any other LLM.**
+一套**全流程求职系统**，覆盖找工作全链路。历经RISC-V芯片、医药集团、跨境物流、AI SaaS 等行业的真实面试实战迭代。
 
 ---
 
-## The 5-Step Workflow / 五步工作流
+## Quick Start
 
-```
-📥 INPUT: Your Resume + The Job Description (JD)
-                      │
-┌─────────────────────▼──────────────────────┐
-│ ① Job Deconstruction / 岗位拆解              │
-│    └─ prompts/job-analysis.md              │
-│    Hard requirements, hidden needs,        │
-│    core skills, bonus points,              │
-│    likely interview angles                 │
-├─────────────────────────────────────────── -┤
-│ ② Resume Diagnosis / 简历诊断               │
-│    └─ prompts/resume-diagnosis.md          │
-│    Matches, redundancies, gaps, risks      │
-├─────────────────────────────────────────── -┤
-│ ③ Targeted Rewrite / 定向优化               │
-│    └─ prompts/resume-rewrite.md            │
-│    STAR rewrites, self-summary overhaul,   │
-│    skills reordering, layout tweaks        │
-├─────────────────────────────────────────── -┤
-│ ④ Final Output / 终稿输出                   │
-│    └─ prompts/final-output.md              │
-│    Optimized full resume + Cover Letter    │
-│    highlights + Multi-JD comparison        │
-├─────────────────────────────────────────── -┤
-│ ⑤ Interview Prep / 面试全流程准备  🆕        │
-│    └─ prompts/interview-prep.md            │
-│    HR phone screen scripts,                │
-│    industry crash course,                  │
-│    weakness mitigation,                    │
-│    technical interview readiness           │
-└─────────────────────┬──────────────────────┘
-                      │
-📤 OUTPUT: Complete diagnostic report + Optimized resume + Interview scripts
-```
-
----
-
-## Quick Start / 快速开始
-
-### 🥇 最简单 / Easiest: Claude Code (1 条命令 / 1 command)
+### Easiest: Claude Code (1 command)
 
 ```bash
-# 1. Clone the repo
 git clone https://github.com/Rsaaaa9/job-fit-check.git
-
-# 2. Enter the directory
 cd job-fit-check
-
-# 3. Start Claude Code — the workflow loads AUTOMATICALLY via CLAUDE.md
-claude
+claude  # CLAUDE.md auto-loads the full 10-step workflow
 ```
 
-Then type: "这是我的简历[粘贴简历]，这是岗位JD[粘贴JD]，帮我分析。" That's it — Claude Code reads `CLAUDE.md` and automatically executes the 4-step workflow. **No setup. No configuration. No agent registration.**
+Then say: "这是我的简历[粘贴]，这是岗位JD[粘贴]，帮我分析。"
 
-> 进入目录后启动 Claude Code，工作流通过 `CLAUDE.md` 自动加载。不需要任何配置，直接把简历和 JD 贴进去就行。
+### Copy-paste (any AI tool)
 
-### 🥈 Copy-paste (any AI tool / 任何 AI 工具都能用)
+Open [`prompts/`](prompts/), copy any prompt, paste into ChatGPT / Claude / Kimi / DeepSeek.
 
-Open each file in [`prompts/`](prompts/), copy the prompt, paste into ChatGPT / Claude / Kimi / DeepSeek. Fill in `[PASTE JD HERE]` and `[PASTE RESUME HERE]`. Run them in order (① → ② → ③ → ④).
+### Slash command (for Claude Code users)
 
-### 🥉 One-command agent (for Claude Code power users)
-
-Copy [`job-fit-check-agent.md`](job-fit-check-agent.md) to `~/.claude/agents/job-fit-check.md`, then type `/job-fit-check` in Claude Code. Same result, slightly faster to trigger.
+Copy `job-fit-check-agent.md` to `~/.claude/agents/job-fit-check.md`, then type `/job-fit-check`.
 
 ---
 
-## What You'll Get / 你会得到什么
+## The 10-Step Workflow
 
-| Step | Output |
-|------|--------|
-| ① | 硬性门槛 / 隐形需求 / 核心能力 / 加分项 / 面试追问方向 |
-| ② | 匹配点 / 冗余内容(应删除) / 缺失项 / 风险点 |
-| ③ | 每段经历 STAR 重写 / 自我评价定向修改 / 技能板块重组 / 排版建议 |
-| ④ | 优化后简历全文 + Cover Letter 要点 + 多JD横向对比 + 投递策略 |
-| ⑤ | 🆕 HR电话逐题话术 / 行业速成知识点 / 弱点预案 / 技术面试准备 |
+| Step | Module | Description |
+|:---:|------|------|
+| 1 | **ATS Keyword Detection** | Extract JD keywords → check resume hit rate → prevent machine-filtering failure |
+| 2 | **Job Match Scoring** | 6-dimension weighted score → 🟢Match / 🟡Try / 🔴Give up |
+| 3 | **JD Deconstruction** | Company background + role analysis + hard/soft requirements + hidden needs + predicted interview questions |
+| 4 | **Resume Diagnosis** | Matches + redundancies + gaps + risks — line-by-line with fixes |
+| 5 | **Multi-JD Priority Ranking** | 6-dimension weighted ranking → energy allocation strategy |
+| 6 | **Gap Analysis & Learning Plan** | Ranked by severity+urgency+learning cycle → what to learn, how long, verifiable output |
+| 7 | **Full Interview Prep** | HR screen → written test → technical → behavioral → final → scenario simulation (6 stages) |
+| 8 | **Mock Interview Mode** | Switch to interviewer role → random Q&A → follow-up → instant feedback |
+| 9 | **Offer & Salary Negotiation** | Market benchmark → negotiable points breakdown → script ready to send |
+| 10 | **Culture & Survival Guide** | Culture snapshot → week-1 checklist → month-1 key moves → exit signals |
+
+Plus: **Industry Salary & Market Trends** (on-demand module — web search for latest data)
 
 ---
 
-## Examples / 示例
+## How It Works
 
-See [`examples/`](examples/) for complete walkthroughs with simulated data:
+This repo uses **CLAUDE.md** — a file that Claude Code automatically reads when you enter the directory. No installation, no plugins, no registration. Just `cd` in and go.
+
+---
+
+## Examples
+
+See [`examples/`](examples/) for complete walkthroughs with real-world scenarios:
 
 | Example | Scenario |
 |---------|---------|
-| [Product Manager (New Grad)](examples/product-manager.md) | CS major → PM role at a mid-size internet company |
-| [Digital Marketing](examples/digital-marketing.md) | Marketing major with agency internship → Brand-side marketing role |
-
-Each example shows the full 5-step output so you know exactly what to expect.
+| [Product Manager (New Grad)](examples/product-manager.md) | CS major to PM role at a mid-size internet company |
+| [Digital Marketing](examples/digital-marketing.md) | Marketing major with agency internship to brand-side role |
 
 ---
 
-## How This Came About / 项目背景
+## Background
 
-This methodology was developed for a [Xiaohongshu (RED)](https://www.xiaohongshu.com) content creator account focused on helping Chinese fresh graduates optimize their resumes. The core insight:
+This methodology was born from real 2026 job hunting — facing interviews with a RISC-V chip unicorn (SpacemiT), a listed pharmaceutical group (Joincare), a cross-border logistics startup, and AI SaaS companies. Each version upgrade was driven by actual interview questions, HR screening logic, and hard-won lessons. V3 now covers the complete journey from application to onboarding.
 
-> **"Recruiters spend 6 seconds per resume. Every word on yours must answer: what problem can you solve for me?"**
-
-After optimizing 50+ real resumes, the patterns crystallized into a repeatable 4-step framework. This repo is that framework, made public.
-
-*Follow the creator on RED (account coming soon) for bite-sized resume tips derived from this methodology.*
+> "Recruiters spend 6 seconds per resume. Every word on yours must answer: what problem can you solve for me?"
 
 ---
 
-## How It Works / 原理
-
-This repo uses **CLAUDE.md** — a file that Claude Code automatically reads when you enter the directory. No installation, no plugins, no agent registration. Just `cd` in and go.
-
-这个仓库使用 CLAUDE.md 文件——Claude Code 进入目录时自动读取。无需安装、无需插件、无需注册 agent。进入目录就行。
-
-For non-Claude-Code users, the individual prompts live in [`prompts/`](prompts/) and work with any LLM.
-
----
-
-## Advanced / 进阶
-
-### As a Claude Code slash command
-
-Copy [`job-fit-check-agent.md`](job-fit-check-agent.md) to `~/.claude/agents/job-fit-check.md`, then trigger with `/job-fit-check` from any directory.
-
-### GitHub Action (coming soon)
-
-Auto-analyze your resume against a JD on every PR.
-
----
-
-## Contributing / 贡献
-
-Found a prompt that could be sharper? Have a real-world case study to share? PRs welcome.
-
-1. Fork this repo
-2. Improve a prompt or add an example
-3. Submit a PR with your changes and why
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for details (coming soon).
-
----
-
-## License / 协议
+## License
 
 MIT — take it, use it, remix it, teach with it. Just keep the attribution.
 
-See [LICENSE](LICENSE) for full text.
-
----
-
-<p align="center">
-  <sub>Built with ❤️ for job seekers everywhere. | 为每一个求职者而建。</sub>
-</p>
+See [LICENSE](LICENSE).
